@@ -1,8 +1,6 @@
 $ = jQuery = require('jquery');
 var Marionette = require('backbone.marionette');
 
-
-// var app = require('./app/app')
 var reqres = require('./config/reqres');
 var commands = require('./config/commands');
 

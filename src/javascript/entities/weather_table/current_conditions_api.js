@@ -15,8 +15,8 @@ var API = {
       current_conditions.push(current_condition);
     });
 
-    current_conditions.each(function(d){
-      d.fetch({
+    current_conditions.each(function(model){
+      model.fetch({
         success: function(data) {
           count++;
           if(count === request_cities.length){
