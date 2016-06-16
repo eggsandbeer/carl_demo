@@ -12,8 +12,6 @@ var Modal = require('./apps/modal/modal_module');
 module.exports = {
   init: function(){
     var self = this;
-
-
     $(document).ready(function(){
       window.carl = self.initCarl();
       window.carl.start();

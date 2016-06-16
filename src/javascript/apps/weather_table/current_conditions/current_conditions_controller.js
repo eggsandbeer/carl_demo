@@ -9,7 +9,7 @@ require('./../../../entities/weather_table/current_conditions_api');
 
 var CurrentConditionsController = Marionette.Controller.extend({
   start: function(weather_table_layout){
-
+    console.log(weather_table_layout)
     // Hardcoded, should be changed so that it's tried into a nav or menu or something.
     var request_cities = ['Canada/Vancouver','WA/Seattle','Canada/Toronto'];
     var requestCurrentConditions = reqres.request('weathertable:get:currentconditions', request_cities);
