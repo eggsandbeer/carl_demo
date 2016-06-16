@@ -1,40 +1,49 @@
-// Embed fonts
-@import "fonts";
-
-// Normalize browsers
-@import "normalize";
-
-// Variables, mixins and extends
-@import "variables";
-@import "mixins";
-@import "extends";
-
-// Root document (*, html, body)
-@import "root";
-
-// Layout blocks (header, footer, main)
-@import "layouts";
-
-// Global typography
-@import "typography";
-
-// Links
-@import "links";
-
-// Grouping content
-@import "elements";
-
-// Standard form controls
-@import "forms";
-
-// Components
-@import "components";
-
-// Stacking order
-@import "zindex";
-
-// CSS3 animations
-@import "animations";
-
-// Utility classes
-@import "utilities";
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial;
+}
+p {
+  font-size: 14px;
+  line-height: 16px;
+}
+#ModalRegion .back-drop {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+#ModalContainer {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  pointer-events: none;
+}
+#Modal {
+  width: 40%;
+  min-height: 200px;
+  margin: 0 auto;
+  margin-top: 20px;
+  background-color: white;
+  padding: 20px;
+  pointer-events: auto;
+}
+#ModalHeader {
+  margin-bottom: 10px;
+}
+#CurrentConditionsRegion {
+  li {
+    list-style: none;
+    p {
+      padding: 5px;
+      border: 1px solid white;
+      border-radius: 4px;
+    }
+  }
+  li:hover {
+    p {
+      border: 1px solid #d7edfa;
+    }
+  }
+}
