@@ -2,6 +2,7 @@ var Marionette = require('backbone.marionette');
 var CurrentConditionsCompView = require('./current_conditions_comp_view');
 var reqres = require('./../../../config/reqres');
 
+// include API to make requests include
 require('./../../../entities/weather_table/current_conditions_api');
 
 var CurrentConditionsController = Marionette.Controller.extend({
@@ -15,6 +16,6 @@ var CurrentConditionsController = Marionette.Controller.extend({
       weather_table_layout.CurrentConditionsRegion.show(current_conditions_comp_view);
     });
   }
-})
+});
 
 module.exports = CurrentConditionsController;
