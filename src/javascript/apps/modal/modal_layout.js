@@ -12,7 +12,15 @@ ModalLayout = Marionette.LayoutView.extend({
     'click .back-drop' : 'emptyModalRegion'
   },
   emptyModalRegion: function() {
-    $(window.carl.ModalRegion.el).empty();
+    this.$el.removeClass('show');
+    setTimeout(function(){
+      $(window.carl.ModalRegion.el).empty();
+    }, 500);
+  },
+  onShow: function(){
+    setTimeout(function(){
+      this.$el.addClass('show');
+    }.bind(this), 100);
   }
 })
 

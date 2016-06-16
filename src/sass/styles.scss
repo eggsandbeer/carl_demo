@@ -29,12 +29,13 @@ hr {
   min-height: 100vh;
     box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.08);
 }
-#ModalRegion .back-drop {
+.back-drop {
   position: fixed;
   top: 0;
   height: 100vh;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
+  transition: background-color 0.2s ease;
+  background-color: rgba(0, 0, 0, 0);
 }
 #ModalContainer {
   position: absolute;
@@ -51,6 +52,17 @@ hr {
   padding: 20px;
   pointer-events: auto;
   box-shadow: 0px 0px 39px 0px rgba(0,0,0,0.55);
+  top: -400px;
+  position: relative;
+  transition: top 0.5s ease;
+}
+.show {
+  #Modal {
+    top: 0;
+  }
+  .back-drop {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
 }
 #ModalHeader {
   margin-bottom: 10px;

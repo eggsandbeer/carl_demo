@@ -5,7 +5,6 @@ var commands = require('./../../config/commands');
 var WeatherTableLayout = require('./weather_table_layout');
 var CurrentConditionsController = require('./current_conditions/current_conditions_controller');
 
-
 var WeatherTableRouter = Marionette.AppRouter.extend({
   appRoutes: {
     'weather' : 'getWeatherData'
