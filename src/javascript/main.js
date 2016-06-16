@@ -48,7 +48,7 @@ module.exports = {
 
       Backbone.history.start();
       if(Carl.getCurrentRoute() === "" || Carl.getCurrentRoute() === undefined){
-        commands.execute('weather_data:show');
+        commands.execute('weather_table:show');
       }
 
     });

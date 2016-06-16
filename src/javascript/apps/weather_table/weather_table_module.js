@@ -8,7 +8,7 @@ var CurrentConditionsController = require('./current_conditions/current_conditio
 
 var WeatherTableRouter = Marionette.AppRouter.extend({
   appRoutes: {
-    'weatherdata' : 'getWeatherData'
+    'weather' : 'getWeatherData'
   }
 });
 
@@ -29,8 +29,8 @@ WeatherTableModule = Marionette.Module.extend({
   // flag to tell if module is started
   _started: true,
   initialize: function(){
-    commands.setHandler('weather_data:show', function(){
-      commands.execute('main:navigate', 'weatherdata');
+    commands.setHandler('weather_table:show', function(){
+      commands.execute('main:navigate', 'weather');
       API.getWeatherData();
     });
     this.router = new WeatherTableRouter({ controller: API });
