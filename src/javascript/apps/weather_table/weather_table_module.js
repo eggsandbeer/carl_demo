@@ -1,6 +1,5 @@
 var Marionette = require('backbone.marionette');
 
-var reqres = require('./../../config/reqres');
 var commands = require('./../../config/commands');
 
 var WeatherTableLayout = require('./weather_table_layout');
@@ -31,9 +30,10 @@ WeatherTableModule = Marionette.Module.extend({
   _started: true,
   initialize: function(){
     commands.setHandler('weather_data:show', function(){
+      commands.execute('main:navigate', 'weatherdata');
       API.getWeatherData();
-      this.router = new WeatherTableRouter({ controller: API });
     });
+    this.router = new WeatherTableRouter({ controller: API });
   }
 })
 module.exports = WeatherTableModule;

@@ -34,41 +34,23 @@ module.exports = {
       return Backbone.history.fragment;
     };
 
-    // Carl.startSubApp = function(appName, args){
-    //   // var currentApp = Marlin.module(appName);
-    //   // if (Marlin.currentApp === currentApp){ return; }
-    //   //
-    //   if (Carl.currentApp){
-    //     Carl.currentApp.stop();
-    //   }
-    //   //
-    //   // Marlin.currentApp = currentApp;
-    //   // currentApp.start(args);
-    // };
-
     Carl.addRegions({
       ContentRegion: '#ContentRegion',
       NotificationRegion: '#NotificationRegion',
-      ModalRegion: '#ModalRegion',
-      SideNavRegion: '#SideNavRegion'
-    });
-
-    Carl.on('before:start', function (options) {
-
+      ModalRegion: '#ModalRegion'
     });
 
     Carl.on('start', function() {
 
-      // commands.setHandler('main:navigate', function(name){
-      //   Carl.navigate(name);
-      // });
+      commands.setHandler('main:navigate', function(name){
+        Carl.navigate(name);
+      });
 
-      if(Backbone.history){
-        Backbone.history.start();
-        if(Carl.getCurrentRoute() === "" || Carl.getCurrentRoute() === undefined){
-          commands.execute('weather_data:show');
-        }
+      Backbone.history.start();
+      if(Carl.getCurrentRoute() === "" || Carl.getCurrentRoute() === undefined){
+        commands.execute('weather_data:show');
       }
+
     });
     return Carl;
   }
