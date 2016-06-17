@@ -1,8 +1,9 @@
 var Backbone = require('backbone');
+var CONSTS = require('./../../config/consts')
 
 var CurrentConditionsModel = Backbone.Model.extend({
   urlRoot: function(){
-    return 'http://api.wunderground.com/api/6c26e6c606177691/conditions/q/'
+    return 'http://api.wunderground.com/api/'+CONSTS.API_KEY+'/conditions/q/'
   },
   url: function(){
     return this.urlRoot()+this.attributes.city_code+'.json'

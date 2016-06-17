@@ -68,6 +68,13 @@ hr {
   margin-bottom: 10px;
 }
 #CurrentConditionsRegion {
+  > div {
+    opacity:1;
+    transition: opacity 0.2s ease;
+    &.zero-opacity {
+      opacity: 0;
+    }
+  }
   li {
     list-style: none;
     padding: 5px 0px;
@@ -79,7 +86,47 @@ hr {
   }
   li:hover {
     p {
-      border: 1px solid #d7edfa;
+      border: 1px solid #1d1d1d;
     }
   }
+}
+// loading stuff
+.spinner-container {
+  opacity:1;
+  transition: opacity 0.2s ease;
+  &.zero-opacity {
+    opacity: 0;
+  }
+}
+.sp {
+	width: 32px;
+	height: 32px;
+	clear: both;
+	margin: 20px auto;
+}
+.sp-volume {
+	background-color: #1d1d1d;
+	border-radius: 50%;
+	position: relative;
+	-webkit-animation: spVolRot .6s infinite linear;
+	animation: spVolRot .6s infinite linear;
+}
+.sp-volume:after {
+	content: '';
+	border-radius: 50%;
+	position: absolute;
+	display: block;
+	width: 10px;
+	height: 10px;
+	left: 5px;
+	top: 5px;
+	background-color: lighten(#1d1d1d,100%);
+}
+@-webkit-keyframes spVolRot {
+	from { -webkit-transform: rotate(0deg); }
+	to { -webkit-transform: rotate(359deg); }
+}
+@keyframes spVolRot {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(359deg); }
 }

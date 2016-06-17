@@ -1,5 +1,6 @@
 var Marionette = require('backbone.marionette');
 var CurrentConditionsCompView = require('./current_conditions_comp_view');
+var LoadingView = require('./../../loading/loading_view');
 var reqres = require('./../../../config/reqres');
 var commands = require('./../../../config/commands');
 
@@ -11,6 +12,9 @@ var CurrentConditionsController = Marionette.Controller.extend({
     // Hardcoded, should be changed so that it's tried into a nav or menu or something.
     var request_cities = ['Canada/Vancouver','WA/Seattle','Canada/Toronto'];
     var requestCurrentConditions = reqres.request('weathertable:get:currentconditions', request_cities);
+
+    var loading_view = new LoadingView();
+    weather_table_layout.CurrentConditionsRegion.show(loading_view);
 
     $.when(requestCurrentConditions).done(function(current_conditions_collection) {
       // Need some error handling here for models we get back from API. Loops over, check if they are valid.

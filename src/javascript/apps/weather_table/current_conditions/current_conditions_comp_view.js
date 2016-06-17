@@ -8,7 +8,13 @@ CurrentConditionsCompView = Marionette.CompositeView.extend({
   template: CurrentConditionsCompTemplate,
   childView: CurrentConditionsItemView,
   emptyView: CurrentConditionsItemViewEmpty,
-  childViewContainer: "ul"
+  childViewContainer: "ul",
+  className: 'zero-opacity',
+  onRender: function(){
+    setTimeout(function(){
+      this.$el.removeClass('zero-opacity');
+    }.bind(this), 100);
+  }
 });
 
 module.exports = CurrentConditionsCompView;
